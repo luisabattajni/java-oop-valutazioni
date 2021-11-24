@@ -29,22 +29,24 @@ public class CalcolaValutazione {
 	double mediaVoti;
 	
 	// costruttori
-	CalcolaValutazione(int idStudente, int percentualeAssenze, double mediaVoti){
-		this.idStudente = idStudente;
-		this.percentualeAssenze = percentualeAssenze;
-		this.mediaVoti = mediaVoti;
-	}
+	//string?
+	
+	 CalcolaValutazione(int idStudente, int percentualeAssenze, double mediaVoti){
+	 this.idStudente = idStudente; 
+	 this.percentualeAssenze = percentualeAssenze;
+	 this.mediaVoti = mediaVoti; }
+	 
 	
 	//metodo
 	
 	
-	String ris () {
-		if ((percentualeAssenze >= 25 && percentualeAssenze <= 50 && mediaVoti > 2) || (percentualeAssenze > 25 && mediaVoti >= 2)) {
-			String risultato = "Promosso";
-			return risultato;
+	boolean promosso () {
+		if ((percentualeAssenze >= 25 && percentualeAssenze <= 50 && mediaVoti > 2) || (percentualeAssenze < 25 && mediaVoti >= 2)) {
+			
+			return true;
 		} else {
-			String risultato = "Bocciato";
-			return risultato;
+			
+			return false;
 		}
 		
 	}

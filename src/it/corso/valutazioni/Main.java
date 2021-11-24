@@ -5,7 +5,6 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		/*
 		 * create un array di 20 CalcolaValutazione, 
@@ -29,17 +28,26 @@ public class Main {
 		
 		for(int i = 0; i < randomValutazione.length; i++) {
 			percentualeAssenze = randomGenerator.nextInt(101);
-			//fix later + add only 2 decimals
 			mediaVoti = 5 * randomGenerator.nextDouble();
 			
 			idStudente = i + 1;
 			
-			//String risultato = randomValutazione[i].ris();
+			randomValutazione[i] = new CalcolaValutazione(idStudente, percentualeAssenze, mediaVoti);
 			
-			
-			//below: stampa di id + assenze + media
+			//debug
 			System.out.println(idStudente + " " +  percentualeAssenze + " " + mediaVoti);
-			//System.out.println(idStudente + " " + risultato);
+			
+			boolean risultato = randomValutazione[i].promosso();
+			
+			if (risultato) {
+				System.out.println(idStudente + " " + "Promosso");
+			}else {
+				System.out.println(idStudente + " " + "Bocciato");
+			}
+			
+			
+			
+
 			
 			} 
 
